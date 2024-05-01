@@ -4,9 +4,10 @@ import { useEffect } from "react";
 import { useRouter } from "next/navigation";
 import { useTokenStore } from "@/lib/store/tokenStore";
 
-export default function Home() {
+function Layout({ children }: { children: React.ReactNode }) {
   const router = useRouter();
   const setToken = useTokenStore((state) => state.setToken);
+  const token: string | null = useTokenStore((state) => state.token);
 
   useEffect(() => {
     // Check if running on client-side before accessing localStorage
@@ -35,10 +36,12 @@ export default function Home() {
         }
       }
 
-      router.push("/dashboard");
+      // router.push("/dashboard");
       setToken(storedToken);
     }
   }, [router, setToken]);
 
-  return <div></div>;
+  return <div>Welcome</div>;
 }
+
+export default Layout;

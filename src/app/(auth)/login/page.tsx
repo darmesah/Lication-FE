@@ -41,22 +41,22 @@ export default function SolverForm() {
 
     try {
       const response = await fetch(
-        "https://api.innox.africa/api/v1/auth/login",
+        "http:///localhost:8081/api/auth/signin",
         options
       );
 
       const responseData: any = await response.json();
 
       if (!response.ok) {
-        throw new Error(responseData.error);
+        throw new Error(responseData.message);
       }
 
       const tokenExpiry = Date.now() + 30 * 60 * 1000; // 1 week in milliseconds
       // Save token and expiration time in localStorage
-      localStorage.setItem("token", responseData.token);
+      localStorage.setItem("token", responseData.accessToken);
       localStorage.setItem("tokenExpiry", tokenExpiry.toString());
 
-      router.push("/apply");
+      router.push("/dashboard");
 
       setReqResponseData(responseData);
       setResponseError("");
@@ -73,7 +73,7 @@ export default function SolverForm() {
       <div className="w-full  mx-auto h-full flex flex-col relative justify-between pt-56px">
         <div className="w-[80%] md:w-[60%] m-auto py-20">
           <h1 className="font-semibold text-xl xl:text-lg text-center pb-10">
-            Login to continue your Pitch2Win application
+            Login
           </h1>
           <Formik
             initialValues={initialValues}
@@ -95,9 +95,6 @@ export default function SolverForm() {
                       {errors.email}
                     </div>
                   )}
-                  {/* <label className="text-sm duration-75 text-gray-500 pointer-events-none font-primary absolute left-0 top-[50%] translate-y-[-70%]">
-                    Email
-                  </label> */}
                 </div>
 
                 <div className="input-wrap relative h-[2.5rem] md:h-8 text-left mb-12">
@@ -110,7 +107,7 @@ export default function SolverForm() {
                   />
                   <button
                     type="button"
-                    className="absolute right-0 top-[50%] transform -translate-y-1/2 mr-2"
+                    className="absolute right-0 top-[50%] transform -translate-y-1/2 mr-2 text-black"
                     onClick={() => setShowPassword(!showPassword)}
                   >
                     {showPassword ? <FaEyeSlash /> : <FaEye />}
@@ -120,9 +117,6 @@ export default function SolverForm() {
                       {errors.password}
                     </div>
                   )}
-                  {/* <label className="text-sm duration-75 text-gray-500 pointer-events-none font-primary absolute left-0 top-[50%] translate-y-[-70%]">
-                    Password
-                  </label> */}
                 </div>
                 <div className="pt-[-10px] pb-16">
                   <p className="pt-[-20px] text-[14px] text-left">

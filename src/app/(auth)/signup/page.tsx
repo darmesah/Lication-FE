@@ -6,7 +6,6 @@ import { TextField } from "@material-ui/core";
 import * as Yup from "yup";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
-import { FaRegCopyright } from "react-icons/fa";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
 
 const validationSchema = Yup.object().shape({
@@ -24,7 +23,7 @@ const validationSchema = Yup.object().shape({
     .required("Please confirm your password"),
 });
 
-export default function SolverForm() {
+export default function Signup() {
   const router = useRouter();
 
   const [showPassword, setShowPassword] = useState(false);
@@ -46,33 +45,36 @@ export default function SolverForm() {
   const handleSubmit = async (values: any) => {
     setIsSubmitting(true);
 
+    // Exclude confirmPassword from the values sent in the request
+    const { confirmPassword, ...formData } = values;
+
     const options = {
       method: "POST",
       headers: {
         accept: "application/json",
         "content-type": "application/json",
       },
-      body: JSON.stringify(values),
+      body: JSON.stringify(formData), // Send formData without confirmPassword
     };
 
     try {
       const response = await fetch(
-        "http://localhost:8081/api/auth/register",
+        "http://localhost:8081/api/auth/signup",
         options
       );
 
       const responseData: any = await response.json();
 
       if (!response.ok) {
-        throw new Error(responseData.error);
+        throw new Error(responseData.message);
       }
 
       const tokenExpiry = Date.now() + 30 * 60 * 1000; // 1 week in milliseconds
       // Save token and expiration time in localStorage
-      localStorage.setItem("token", responseData.token);
+      localStorage.setItem("token", responseData.accessToken);
       localStorage.setItem("tokenExpiry", tokenExpiry.toString());
 
-      router.push("/apply");
+      router.push("/dashboard");
 
       setReqResponseData(responseData);
       setResponseError("");
@@ -90,12 +92,8 @@ export default function SolverForm() {
         <div className="flex flex-col w-full md:w-6/12">
           <div className="pt-20">
             <div className="pt-3 px-7 leading-tight flex flex-col">
-              <h1 className="md:text-2xl text-xl font-bold ">
-                Sign up to InnoX to apply for Pitch2Win
-              </h1>
-              <div className="text-base mt-3 md:text-lg ">
-                {/* <p>Pitch2Win 4, Lagos Nigeria. June 12, 2024</p> */}
-              </div>
+              <h1 className="md:text-2xl text-xl font-bold ">Sign Up</h1>
+              <div className="text-base mt-3 md:text-lg "></div>
 
               <div className="flex flex-col justify-between gap-10 w-10/12">
                 <div className="flex flex-col"></div>
@@ -109,7 +107,7 @@ export default function SolverForm() {
               <div>
                 <div className="px-5 pb-5">
                   <div className="font-semibold text-lg xl:text-lg text-left pb-6">
-                    <span className="">Create your InnoX account</span>
+                    <span className="">Signup</span>
                   </div>
                 </div>
                 <Formik
@@ -131,13 +129,8 @@ export default function SolverForm() {
                             {errors.firstName}
                           </div>
                         )}
-                        {/* <label className="text-sm duration-75 pointer-events-none font-primary absolute text-gray-500 left-0 top-[50%] translate-y-[-70%]">
-                          First Name
-                        </label> */}
                       </div>
-
                       <br />
-
                       <div className="input-wrap relative h-8 text-left mb-12">
                         <Field
                           as={TextField}
@@ -150,9 +143,6 @@ export default function SolverForm() {
                             {errors.lastName}
                           </div>
                         )}
-                        {/* <label className="text-sm duration-75 text-gray-500 pointer-events-none font-primary absolute left-0 top-[50%] translate-y-[-70%]">
-                          Last Name
-                        </label> */}
                       </div>
 
                       <div className="input-wrap relative h-8 text-left mb-12">
@@ -168,9 +158,6 @@ export default function SolverForm() {
                             {errors.email}
                           </div>
                         )}
-                        {/* <label className="text-sm duration-75 text-gray-500 pointer-events-none font-primary absolute left-0 top-[50%] translate-y-[-70%]">
-                          Email
-                        </label> */}
                       </div>
 
                       <div className="input-wrap relative h-[2.5rem] md:h-8 text-left mb-12">
@@ -183,7 +170,7 @@ export default function SolverForm() {
                         />
                         <button
                           type="button"
-                          className="absolute right-0 top-[50%] transform -translate-y-1/2 mr-2"
+                          className="absolute right-0 top-[50%] transform -translate-y-1/2 mr-2 text-black"
                           onClick={() => setShowPassword(!showPassword)}
                         >
                           {showPassword ? <FaEyeSlash /> : <FaEye />}
@@ -193,9 +180,6 @@ export default function SolverForm() {
                             {errors.password}
                           </div>
                         )}
-                        {/* <label className="text-sm duration-75 text-gray-500 pointer-events-none font-primary absolute left-0 top-[50%] translate-y-[-70%]">
-                          Password
-                        </label> */}
                       </div>
 
                       <div className="input-wrap relative h-8 text-left mb-20">
@@ -209,7 +193,7 @@ export default function SolverForm() {
                         />
                         <button
                           type="button"
-                          className="absolute right-0 top-[50%] transform -translate-y-1/2 mr-2"
+                          className="absolute right-0 top-[50%] transform -translate-y-1/2 mr-2 text-black"
                           onClick={() =>
                             setShowConfirmPassword(!showConfirmPassword)
                           }
@@ -221,9 +205,6 @@ export default function SolverForm() {
                             {errors.confirmPassword}
                           </div>
                         )}
-                        {/* <label className="text-sm duration-75 text-gray-500 pointer-events-none font-primary absolute left-0 top-[50%] translate-y-[-70%]">
-                          Confirm Password
-                        </label> */}
                       </div>
 
                       <div className="flex flex-wrap justify-center">
@@ -277,16 +258,6 @@ export default function SolverForm() {
               </div>
             </div>
           </div>
-        </div>
-      </div>
-
-      <div className="flex items-center gap-7 font-primary text-sm mt-20 w-10/12 px-5">
-        <div className="flex items-start justify-center gap-0.5">
-          <FaRegCopyright className="text-gray-300" />
-          <p className="text-gray-300">
-            InnoX is an open innovation platform used to manage innovation
-            programs www.innox.africa
-          </p>
         </div>
       </div>
     </div>
