@@ -10,7 +10,6 @@ import Link from "next/link";
 import InnoX from "@/assets/pitch-to-win/icon.png";
 import { FaRegCopyright } from "react-icons/fa";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
-import { useStepperStore } from "@/lib/store/stepperStore";
 
 const validationSchema = Yup.object().shape({
   password: Yup.string()
