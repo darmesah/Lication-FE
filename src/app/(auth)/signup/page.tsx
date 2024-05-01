@@ -59,7 +59,7 @@ export default function Signup() {
 
     try {
       const response = await fetch(
-        "http://localhost:8081/api/auth/signup",
+        "https://lication-be.onrender.com/api/auth/signup",
         options
       );
 
