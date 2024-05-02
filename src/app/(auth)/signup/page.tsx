@@ -244,7 +244,7 @@ export default function Signup() {
                           )}
                         </button>
                       </div>
-                      <p className="pt-6 font-primary text-xs text-center mb-30">
+                      <p className="pt-6 font-primary text-xs text-center mb-30 text-black">
                         Already have an account?
                         <Link className="text-blue-800 pl-1" href="/login">
                           Login

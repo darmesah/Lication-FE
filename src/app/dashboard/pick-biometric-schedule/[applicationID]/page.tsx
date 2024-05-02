@@ -64,12 +64,12 @@ const BiometricScheduleForm = ({ params }: any) => {
   };
 
   return (
-    <div className="w-[50%] mt-20 m-auto h-full flex-col bg-white">
+    <div className="w-[90%] md:w-[50%] mt-20 m-auto h-full flex-col bg-white">
       <div className=" mx-auto h-full flex flex-col relative justify-between pt-56px">
         {!reqResponseData ? (
           <div className="w-[80%] md:w-[60%] m-auto py-20">
-            <h1 className="font-semibold text-[2rem] text-center pb-10 text-black">
-              Start a Day and Time for Biometric Schedule
+            <h1 className="font-semibold text-[1.4rem] md:text-[2rem] text-center pb-10 text-black">
+              Select Date and Time for Biometric Capture Appointment
             </h1>
             <LocalizationProvider dateAdapter={AdapterDayjs}>
               <Formik
@@ -104,14 +104,14 @@ const BiometricScheduleForm = ({ params }: any) => {
                     </div>
                     <div className="flex justify-center">
                       <button
-                        className={`border bg-[#3023a4] w-[60%] p-3 font-semibold text-white rounded ${
+                        className={` w-full border bg-[#3023a4] p-3 font-semibold text-white rounded ${
                           !isSubmitting && "hover:bg-[#24146B] hover:text-white"
                         } ${isSubmitting && "cursor-not-allowed"}`}
                         type="submit"
                         disabled={isSubmitting}
                       >
                         {!isSubmitting ? (
-                          <span>Submit Application</span>
+                          <span>Book Appointment</span>
                         ) : (
                           <span className="flex justify-center px-10">
                             <svg
@@ -142,7 +142,7 @@ const BiometricScheduleForm = ({ params }: any) => {
         ) : (
           <div className="w-[80%] md:w-[60%] m-auto py-20">
             <h1 className="font-semibold text-[1.4rem] text-center pb-10 text-black">
-              Biometric Date Set Successfully. You will get an Email Shortly.
+              Biometric Capture Appointment Date Confirmed.
             </h1>
             <div className="flex justify-center">
               <button

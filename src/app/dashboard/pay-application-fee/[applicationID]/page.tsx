@@ -53,7 +53,7 @@ export default function PayApplicationFee({ params }: any) {
 
   return (
     <div className="flex justify-center items-center h-screen">
-      <div className="w-[400px] h-[300px] flex flex-col justify-around bg-white rounded-lg shadow-lg p-8">
+      <div className="w-[90%] md:w-[40%] h-[300px] flex flex-col justify-around bg-white rounded-lg shadow-lg p-8">
         <h1 className="text-2xl font-bold mb-4 text-black text-center">
           Pay Application Fee
         </h1>
@@ -67,7 +67,7 @@ export default function PayApplicationFee({ params }: any) {
             disabled={isSubmitting}
           >
             {!isSubmitting ? (
-              <span>Submit Application</span>
+              <span>Confirm Payment</span>
             ) : (
               <span className="flex justify-center px-10">
                 <svg

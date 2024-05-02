@@ -165,7 +165,7 @@ export default function SolverForm() {
                     )}
                   </button>
                 </div>
-                <p className="pt-6 text-center">
+                <p className="pt-6 text-center text-black">
                   {`Don't`} have an account?
                   <Link className=" text-blue-800 pl-1" href="/signup">
                     Create an account

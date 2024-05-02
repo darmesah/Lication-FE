@@ -74,9 +74,9 @@ const validationSchema = Yup.object().shape({
 const CreateCertificateApplicationForm = ({ inputedValues, onSubmit }: any) => {
   return (
     <div className="w-full h-full flex-col bg-white">
-      <div className="w-[70%] mx-auto h-full flex flex-col relative justify-between pt-56px">
+      <div className="md:w-[70%] mx-auto h-full flex flex-col relative justify-between pt-56px">
         <div className="w-[80%] md:w-[60%] m-auto py-20">
-          <h1 className="font-semibold text-[2rem] text-center pb-10 text-black">
+          <h1 className="font-semibold text-[1.6rem] md:text-[2rem] text-center pb-10 text-black">
             Start Application for Work Travel Certificate
           </h1>
           <LocalizationProvider dateAdapter={AdapterDayjs}>
@@ -88,7 +88,7 @@ const CreateCertificateApplicationForm = ({ inputedValues, onSubmit }: any) => {
               onSubmit={onSubmit}
             >
               {({ errors, touched }: any) => (
-                <Form className=" w-[70%] m-auto">
+                <Form className=" md:w-[70%] m-auto">
                   <div className="input-wrap relative h-8 text-left mb-6">
                     <Field
                       as={TextField}
@@ -467,7 +467,7 @@ const CreateCertificateApplicationForm = ({ inputedValues, onSubmit }: any) => {
 
                   <div className="flex flex-wrap justify-center">
                     <button
-                      className={`border bg-[#3023a4] w-[30rem] font-semibold text-white rounded py-2 px-20 `}
+                      className={`border bg-[#3023a4] w-[30rem] font-semibold text-white rounded py-2 px-10 `}
                       type="submit"
                     >
                       <span>Review Application</span>
