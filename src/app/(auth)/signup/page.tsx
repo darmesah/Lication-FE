@@ -24,6 +24,8 @@ const validationSchema = Yup.object().shape({
 });
 
 export default function Signup() {
+  const apiUrl = process.env.NEXT_PUBLIC_API_URL;
+
   const router = useRouter();
 
   const [showPassword, setShowPassword] = useState(false);
@@ -58,10 +60,7 @@ export default function Signup() {
     };
 
     try {
-      const response = await fetch(
-        "https://lication-be.onrender.com/api/auth/signup",
-        options
-      );
+      const response = await fetch(`${apiUrl}/auth/signup`, options);
 
       const responseData: any = await response.json();
 

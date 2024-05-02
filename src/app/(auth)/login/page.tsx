@@ -14,6 +14,8 @@ const validationSchema = Yup.object().shape({
 });
 
 export default function SolverForm() {
+  const apiUrl = process.env.NEXT_PUBLIC_API_URL;
+
   const router = useRouter();
 
   const [showPassword, setShowPassword] = useState(false);
@@ -40,10 +42,7 @@ export default function SolverForm() {
     };
 
     try {
-      const response = await fetch(
-        "https://lication-be.onrender.com/api/auth/signin",
-        options
-      );
+      const response = await fetch(`${apiUrl}/auth/signin`, options);
 
       const responseData: any = await response.json();
 

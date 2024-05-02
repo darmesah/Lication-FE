@@ -41,7 +41,12 @@ function Layout({ children }: { children: React.ReactNode }) {
     }
   }, [router, setToken]);
 
-  return <div>Welcome</div>;
+  return (
+    <div>
+      Welcome
+      {children}
+    </div>
+  );
 }
 
 export default Layout;
