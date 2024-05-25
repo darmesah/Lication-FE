@@ -9,7 +9,7 @@ import { DateTimePicker } from "@mui/x-date-pickers/DateTimePicker";
 import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
 import { LocalizationProvider } from "@mui/x-date-pickers/LocalizationProvider";
 
-import NaptepLogo from "@/assets/naptep.svg";
+import NaptepLogo from "@/assets/NatepLogo.jpg";
 import Image from "next/image";
 
 const initialValues = {
@@ -82,7 +82,7 @@ const CreateCertificateApplicationForm = ({ inputedValues, onSubmit }: any) => {
       <div className="md:w-[70%] mx-auto h-full flex flex-col relative justify-between pt-56px">
         <div className="w-[80%] md:w-[60%] m-auto py-20">
           <div className="flex justify-center mb-6">
-            <Image src={NaptepLogo} alt="naptep-logo" />
+            <Image src={NaptepLogo} alt="naptep-logo" className=" w-[300px]" />
           </div>
           <h1 className="font-semibold text-[1.6rem] md:text-[1.5rem] text-center pb-10 text-black">
             Start Application for Foreign Employment Biometric Certificate

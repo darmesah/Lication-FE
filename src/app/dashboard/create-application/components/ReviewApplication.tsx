@@ -4,7 +4,7 @@ import Typography from "@mui/material/Typography";
 import Box from "@mui/material/Box";
 import Divider from "@mui/material/Divider";
 
-import NaptepLogo from "@/assets/naptep.svg";
+import NaptepLogo from "@/assets/NatepLogo.jpg";
 import Image from "next/image";
 
 const ReviewComponent = ({
@@ -38,7 +38,7 @@ const ReviewComponent = ({
         }}
       >
         <div className="flex justify-center mb-6">
-          <Image src={NaptepLogo} alt="naptep-logo" />
+          <Image src={NaptepLogo} alt="naptep-logo" className=" w-[300px]" />
         </div>
         <Typography variant="h5" gutterBottom>
           Review Your Application

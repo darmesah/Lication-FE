@@ -8,7 +8,7 @@ import { useRouter } from "next/navigation";
 import Link from "next/link";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
 
-import NaptepLogo from "@/assets/naptep.svg";
+import NaptepLogo from "@/assets/NatepLogo.jpg";
 import Image from "next/image";
 
 const validationSchema = Yup.object().shape({
@@ -75,9 +75,12 @@ export default function SolverForm() {
       <div className="w-[70%]  mx-auto h-full flex flex-col relative justify-between pt-56px">
         <div className="w-[80%] md:w-[60%] m-auto py-20">
           <div className="flex justify-center">
-            <Image src={NaptepLogo} alt="naptep-logo" />
+            <Image src={NaptepLogo} alt="naptep-logo" className=" w-[400px]" />
           </div>
-          <h1 className="font-semibold mt-8 text-xl xl:text-lg text-center pb-10 text-black">
+          <h1 className="font-semibold mt-8 text-[1.4rem] text-center text-black">
+            Foreign Employment Biometric Application
+          </h1>
+          <h1 className="font-semibold mt-8 text-xl xl:text-lg text-center pb-8 text-black">
             Login
           </h1>
           <Formik

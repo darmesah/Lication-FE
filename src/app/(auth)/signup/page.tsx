@@ -8,7 +8,7 @@ import { useRouter } from "next/navigation";
 import Link from "next/link";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
 
-import NaptepLogo from "@/assets/naptep.svg";
+import NaptepLogo from "@/assets/NatepLogo.jpg";
 import Image from "next/image";
 
 const validationSchema = Yup.object().shape({
@@ -109,7 +109,14 @@ export default function Signup() {
               <div>
                 <div className="px-5 pb-5">
                   <div className="flex flex-col items-center justify-center">
-                    <Image src={NaptepLogo} alt="naptep-logo" />
+                    <Image
+                      src={NaptepLogo}
+                      alt="naptep-logo"
+                      className=" w-[400px]"
+                    />
+                    <h1 className="font-semibold mt-8 text-[1.4rem] text-center text-black">
+                      Foreign Employment Biometric Application
+                    </h1>
                     <span className=" text-black text-[1.4rem] font-semibold mt-8">
                       Signup
                     </span>

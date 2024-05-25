@@ -3,7 +3,7 @@
 import { useState } from "react";
 import { useRouter } from "next/navigation";
 import { useTokenStore } from "@/lib/store/tokenStore";
-import NaptepLogo from "@/assets/naptep.svg";
+import NaptepLogo from "@/assets/NatepLogo.jpg";
 import Image from "next/image";
 
 export default function PayApplicationFee({ params }: any) {
@@ -57,7 +57,7 @@ export default function PayApplicationFee({ params }: any) {
     <div className="flex justify-center items-center h-screen">
       <div className="w-[90%] md:w-[40%] h-[300px] flex flex-col justify-around bg-white rounded-lg shadow-lg p-8">
         <div className="flex justify-center mb-6">
-          <Image src={NaptepLogo} alt="naptep-logo" />
+          <Image src={NaptepLogo} alt="naptep-logo" className=" w-[300px]" />
         </div>
         <h1 className="text-2xl font-bold mb-4 text-black text-center">
           Pay Application Fee

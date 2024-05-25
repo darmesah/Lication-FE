@@ -13,7 +13,7 @@ import { useState } from "react";
 import { useRouter } from "next/navigation";
 import { useTokenStore } from "@/lib/store/tokenStore";
 
-import NaptepLogo from "@/assets/naptep.svg";
+import NaptepLogo from "@/assets/NatepLogo.jpg";
 import Image from "next/image";
 
 const validationSchema = Yup.object().shape({
@@ -70,7 +70,7 @@ const BiometricScheduleForm = ({ params }: any) => {
     <div className="w-[90%] md:w-[50%] mt-20 m-auto h-full flex-col bg-white">
       <div className=" mx-auto h-full flex flex-col relative justify-between pt-56px">
         <div className="flex justify-center mb-6">
-          <Image src={NaptepLogo} alt="naptep-logo" />
+          <Image src={NaptepLogo} alt="naptep-logo" className=" w-[300px]" />
         </div>
         {!reqResponseData ? (
           <div className="w-[80%] md:w-[60%] m-auto py-20">
@@ -148,7 +148,11 @@ const BiometricScheduleForm = ({ params }: any) => {
         ) : (
           <div className="w-[80%] md:w-[60%] m-auto py-20">
             <div className="flex justify-center">
-              <Image src={NaptepLogo} alt="naptep-logo" />
+              <Image
+                src={NaptepLogo}
+                alt="naptep-logo"
+                className=" w-[300px]"
+              />
             </div>
             <h1 className="font-semibold text-[1.4rem] text-center pb-10 text-black">
               Biometric Capture Appointment Date Confirmed.
