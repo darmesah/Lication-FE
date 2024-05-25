@@ -8,6 +8,9 @@ import { useRouter } from "next/navigation";
 import Link from "next/link";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
 
+import NaptepLogo from "@/assets/naptep.svg";
+import Image from "next/image";
+
 const validationSchema = Yup.object().shape({
   email: Yup.string().email("Invalid email").required("Email is required"),
   password: Yup.string().required("Password is required"),
@@ -68,10 +71,13 @@ export default function SolverForm() {
   };
 
   return (
-    <div className="w-full h-full flex-col bg-white">
-      <div className="w-full  mx-auto h-full flex flex-col relative justify-between pt-56px">
+    <div className="w-full min-h-[100vh] flex-col bg-white">
+      <div className="w-[70%]  mx-auto h-full flex flex-col relative justify-between pt-56px">
         <div className="w-[80%] md:w-[60%] m-auto py-20">
-          <h1 className="font-semibold text-xl xl:text-lg text-center pb-10">
+          <div className="flex justify-center">
+            <Image src={NaptepLogo} alt="naptep-logo" />
+          </div>
+          <h1 className="font-semibold mt-8 text-xl xl:text-lg text-center pb-10 text-black">
             Login
           </h1>
           <Formik

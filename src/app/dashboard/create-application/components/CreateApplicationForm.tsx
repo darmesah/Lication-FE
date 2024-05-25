@@ -2,10 +2,15 @@ import React from "react";
 import { Formik, Form, Field } from "formik";
 import * as Yup from "yup";
 import TextField from "@mui/material/TextField";
+import { MenuItem } from "@mui/material";
+
 import { DatePicker } from "@mui/x-date-pickers/DatePicker";
 import { DateTimePicker } from "@mui/x-date-pickers/DateTimePicker";
 import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
 import { LocalizationProvider } from "@mui/x-date-pickers/LocalizationProvider";
+
+import NaptepLogo from "@/assets/naptep.svg";
+import Image from "next/image";
 
 const initialValues = {
   idNumber: "",
@@ -76,8 +81,11 @@ const CreateCertificateApplicationForm = ({ inputedValues, onSubmit }: any) => {
     <div className="w-full h-full flex-col bg-white">
       <div className="md:w-[70%] mx-auto h-full flex flex-col relative justify-between pt-56px">
         <div className="w-[80%] md:w-[60%] m-auto py-20">
-          <h1 className="font-semibold text-[1.6rem] md:text-[2rem] text-center pb-10 text-black">
-            Start Application for Work Travel Certificate
+          <div className="flex justify-center mb-6">
+            <Image src={NaptepLogo} alt="naptep-logo" />
+          </div>
+          <h1 className="font-semibold text-[1.6rem] md:text-[1.5rem] text-center pb-10 text-black">
+            Start Application for Foreign Employment Biometric Certificate
           </h1>
           <LocalizationProvider dateAdapter={AdapterDayjs}>
             <Formik
@@ -95,7 +103,7 @@ const CreateCertificateApplicationForm = ({ inputedValues, onSubmit }: any) => {
                       label="ID Number"
                       className="border-0 border-b input-field mb-10 absolute outline-0 p-0 w-full h-full bg-white text-sm duration-75"
                       name="idNumber"
-                      placeholder="Enter your BVN or NIN"
+                      placeholder="Enter your NIN"
                     />
                     {errors.idNumber && touched.idNumber && (
                       <div className="absolute bottom-[-40px] text-xs text-red-500">
@@ -104,7 +112,6 @@ const CreateCertificateApplicationForm = ({ inputedValues, onSubmit }: any) => {
                     )}
                   </div>
                   <br />
-
                   <div className="input-wrap relative h-8 text-left mb-12">
                     <Field
                       as={TextField}
@@ -118,7 +125,6 @@ const CreateCertificateApplicationForm = ({ inputedValues, onSubmit }: any) => {
                       </div>
                     )}
                   </div>
-
                   <div className="input-wrap relative h-8 text-left mb-12">
                     <Field
                       as={TextField}
@@ -132,7 +138,6 @@ const CreateCertificateApplicationForm = ({ inputedValues, onSubmit }: any) => {
                       </div>
                     )}
                   </div>
-
                   <div className="input-wrap relative h-8 text-left mb-12">
                     <Field
                       as={TextField}
@@ -146,7 +151,6 @@ const CreateCertificateApplicationForm = ({ inputedValues, onSubmit }: any) => {
                       </div>
                     )}
                   </div>
-
                   <div className="input-wrap relative h-8 text-left mb-12">
                     <Field name="dateOfBirth">
                       {({ field, form }: any) => (
@@ -167,7 +171,6 @@ const CreateCertificateApplicationForm = ({ inputedValues, onSubmit }: any) => {
                       </div>
                     )}
                   </div>
-
                   <div className="input-wrap relative h-8 text-left mb-12">
                     <Field
                       as={TextField}
@@ -181,7 +184,6 @@ const CreateCertificateApplicationForm = ({ inputedValues, onSubmit }: any) => {
                       </div>
                     )}
                   </div>
-
                   <div className="input-wrap relative h-8 text-left mb-12">
                     <Field
                       as={TextField}
@@ -195,7 +197,6 @@ const CreateCertificateApplicationForm = ({ inputedValues, onSubmit }: any) => {
                       </div>
                     )}
                   </div>
-
                   <div className="input-wrap relative h-8 text-left mb-12">
                     <Field
                       as={TextField}
@@ -209,7 +210,6 @@ const CreateCertificateApplicationForm = ({ inputedValues, onSubmit }: any) => {
                       </div>
                     )}
                   </div>
-
                   <div className="input-wrap relative h-8 text-left mb-12">
                     <Field
                       as={TextField}
@@ -223,7 +223,6 @@ const CreateCertificateApplicationForm = ({ inputedValues, onSubmit }: any) => {
                       </div>
                     )}
                   </div>
-
                   <div className="input-wrap relative h-8 text-left mb-12">
                     <Field
                       as={TextField}
@@ -237,7 +236,6 @@ const CreateCertificateApplicationForm = ({ inputedValues, onSubmit }: any) => {
                       </div>
                     )}
                   </div>
-
                   <div className="input-wrap relative h-8 text-left mb-12">
                     <Field
                       as={TextField}
@@ -251,7 +249,6 @@ const CreateCertificateApplicationForm = ({ inputedValues, onSubmit }: any) => {
                       </div>
                     )}
                   </div>
-
                   <div className="input-wrap relative h-8 text-left mb-12">
                     <Field
                       as={TextField}
@@ -265,7 +262,6 @@ const CreateCertificateApplicationForm = ({ inputedValues, onSubmit }: any) => {
                       </div>
                     )}
                   </div>
-
                   <div className="input-wrap relative h-8 text-left mb-12">
                     <Field
                       as={TextField}
@@ -279,7 +275,6 @@ const CreateCertificateApplicationForm = ({ inputedValues, onSubmit }: any) => {
                       </div>
                     )}
                   </div>
-
                   <div className="input-wrap relative h-8 text-left mb-12">
                     <Field name="dateOfIssue">
                       {({ field, form }: any) => (
@@ -300,7 +295,6 @@ const CreateCertificateApplicationForm = ({ inputedValues, onSubmit }: any) => {
                       </div>
                     )}
                   </div>
-
                   <div className="input-wrap relative h-8 text-left mb-12">
                     <Field name="dateOfExpiry">
                       {({ field, form }: any) => (
@@ -321,7 +315,6 @@ const CreateCertificateApplicationForm = ({ inputedValues, onSubmit }: any) => {
                       </div>
                     )}
                   </div>
-
                   <div className="input-wrap relative h-8 text-left mb-12">
                     <Field
                       as={TextField}
@@ -335,7 +328,6 @@ const CreateCertificateApplicationForm = ({ inputedValues, onSubmit }: any) => {
                       </div>
                     )}
                   </div>
-
                   <div className="input-wrap relative h-8 text-left mb-12">
                     <Field
                       as={TextField}
@@ -349,7 +341,6 @@ const CreateCertificateApplicationForm = ({ inputedValues, onSubmit }: any) => {
                       </div>
                     )}
                   </div>
-
                   <div className="input-wrap relative h-8 text-left mb-12">
                     <Field
                       as={TextField}
@@ -364,7 +355,6 @@ const CreateCertificateApplicationForm = ({ inputedValues, onSubmit }: any) => {
                         </div>
                       )}
                   </div>
-
                   <div className="input-wrap relative h-8 text-left mb-12">
                     <Field
                       as={TextField}
@@ -378,7 +368,6 @@ const CreateCertificateApplicationForm = ({ inputedValues, onSubmit }: any) => {
                       </div>
                     )}
                   </div>
-
                   <div className="input-wrap relative h-8 text-left mb-12">
                     <Field
                       as={TextField}
@@ -393,7 +382,6 @@ const CreateCertificateApplicationForm = ({ inputedValues, onSubmit }: any) => {
                         </div>
                       )}
                   </div>
-
                   <div className="input-wrap relative h-8 text-left mb-12">
                     <Field
                       as={TextField}
@@ -407,7 +395,6 @@ const CreateCertificateApplicationForm = ({ inputedValues, onSubmit }: any) => {
                       </div>
                     )}
                   </div>
-
                   <div className="input-wrap relative h-8 text-left mb-12">
                     <Field
                       as={TextField}
@@ -421,7 +408,6 @@ const CreateCertificateApplicationForm = ({ inputedValues, onSubmit }: any) => {
                       </div>
                     )}
                   </div>
-
                   <div className="input-wrap relative h-8 text-left mb-12">
                     <Field
                       as={TextField}
@@ -435,7 +421,6 @@ const CreateCertificateApplicationForm = ({ inputedValues, onSubmit }: any) => {
                       </div>
                     )}
                   </div>
-
                   <div className="input-wrap relative h-8 text-left mb-12">
                     <Field
                       as={TextField}
@@ -449,14 +434,22 @@ const CreateCertificateApplicationForm = ({ inputedValues, onSubmit }: any) => {
                       </div>
                     )}
                   </div>
-
                   <div className="input-wrap relative h-8 text-left mb-12">
                     <Field
                       as={TextField}
+                      select
                       label="Nearest Capture Center"
                       className="border-0 border-b input-field mb-10 absolute outline-0 p-0 w-full h-full bg-white text-sm duration-75"
                       name="nearestCaptureCenter"
-                    />
+                    >
+                      <MenuItem value="" disabled>
+                        Select a capture center
+                      </MenuItem>
+                      <MenuItem value="Abuja">Abuja</MenuItem>
+                      <MenuItem value="Lagos">Lagos</MenuItem>
+                      <MenuItem value="Port Harcourt">Port Harcourt</MenuItem>
+                      <MenuItem value="Kaduna">Kaduna</MenuItem>
+                    </Field>
                     {errors.nearestCaptureCenter &&
                       touched.nearestCaptureCenter && (
                         <div className="absolute bottom-[-40px] text-xs text-red-500">
@@ -464,7 +457,6 @@ const CreateCertificateApplicationForm = ({ inputedValues, onSubmit }: any) => {
                         </div>
                       )}
                   </div>
-
                   <div className="flex flex-wrap justify-center">
                     <button
                       className={`border bg-[#3023a4] w-[30rem] font-semibold text-white rounded py-2 px-10 `}

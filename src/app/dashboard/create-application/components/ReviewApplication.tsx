@@ -4,6 +4,9 @@ import Typography from "@mui/material/Typography";
 import Box from "@mui/material/Box";
 import Divider from "@mui/material/Divider";
 
+import NaptepLogo from "@/assets/naptep.svg";
+import Image from "next/image";
+
 const ReviewComponent = ({
   formData,
   onGoBack,
@@ -34,6 +37,9 @@ const ReviewComponent = ({
           bgcolor: "background.paper",
         }}
       >
+        <div className="flex justify-center mb-6">
+          <Image src={NaptepLogo} alt="naptep-logo" />
+        </div>
         <Typography variant="h5" gutterBottom>
           Review Your Application
         </Typography>

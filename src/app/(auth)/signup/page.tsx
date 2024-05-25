@@ -8,6 +8,9 @@ import { useRouter } from "next/navigation";
 import Link from "next/link";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
 
+import NaptepLogo from "@/assets/naptep.svg";
+import Image from "next/image";
+
 const validationSchema = Yup.object().shape({
   firstName: Yup.string().required("First Name is required"),
   lastName: Yup.string().required("Last Name is required"),
@@ -105,10 +108,14 @@ export default function Signup() {
             <div className="py-14 px-6 md:px-12 box-border">
               <div>
                 <div className="px-5 pb-5">
-                  <div className="font-semibold text-lg xl:text-lg text-left pb-6">
-                    <span className="">Signup</span>
+                  <div className="flex flex-col items-center justify-center">
+                    <Image src={NaptepLogo} alt="naptep-logo" />
+                    <span className=" text-black text-[1.4rem] font-semibold mt-8">
+                      Signup
+                    </span>
                   </div>
                 </div>
+
                 <Formik
                   initialValues={initialValues}
                   validationSchema={validationSchema}
