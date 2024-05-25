@@ -40,7 +40,10 @@ const ReviewComponent = ({
         <div className="flex justify-center mb-6">
           <Image src={NaptepLogo} alt="naptep-logo" className=" w-[300px]" />
         </div>
-        <Typography variant="h5" gutterBottom>
+        <h1 className="font-semibold text-[1.6rem] md:text-[2.2rem] text-center pb-10 text-green-900">
+          Foreign Employment Biometric Certificate Application
+        </h1>
+        <Typography className=" text-center" variant="h5" gutterBottom>
           Review Your Application
         </Typography>
         <Divider sx={{ my: 2 }} />

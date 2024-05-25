@@ -7,15 +7,27 @@ import Image from "next/image";
 
 export default function Home() {
   return (
-    <div>
-      <div className="flex justify-center">
-        <Image src={NaptepLogo} alt="naptep-logo" className=" w-[400px]" />
+    <div className="w-full min-h-[100vh] flex-col bg-white">
+      <div className="w-[70%]  mx-auto h-full flex flex-col relative justify-between pt-56px">
+        <div className="flex justify-center mt-10">
+          <Image src={NaptepLogo} alt="naptep-logo" className=" w-[400px]" />
+        </div>
+        <div className="w-[80%] md:w-[60%] m-auto pb-20">
+          <h1 className="font-semibold mt-8 mb-20 text-[2.5rem] text-center text-green-900">
+            Foreign Employment Biometric Certificate Application
+          </h1>
+          <div className=" flex justify-center mt-9">
+            <Link href="/dashboard/create-application">
+              <button
+                className={`border bg-[#3023a4] w-[30rem] font-semibold text-white rounded py-4 px-20 `}
+                type="button"
+              >
+                <span>Start Application</span>
+              </button>
+            </Link>
+          </div>
+        </div>
       </div>
-      <Link href="/dashboard/create-application">
-        <p className=" bg-white text-black w-fit p-3 mt-4">
-          Create new Application
-        </p>
-      </Link>
     </div>
   );
 }

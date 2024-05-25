@@ -67,14 +67,17 @@ const BiometricScheduleForm = ({ params }: any) => {
   };
 
   return (
-    <div className="w-[90%] md:w-[50%] mt-20 m-auto h-full flex-col bg-white">
+    <div className="w-[90%] md:w-[50%] mt-20 m-auto py-8 h-full flex-col bg-white">
       <div className=" mx-auto h-full flex flex-col relative justify-between pt-56px">
-        <div className="flex justify-center mb-6">
+        <div className="flex justify-center">
           <Image src={NaptepLogo} alt="naptep-logo" className=" w-[300px]" />
         </div>
         {!reqResponseData ? (
-          <div className="w-[80%] md:w-[60%] m-auto py-20">
-            <h1 className="font-semibold text-[1.4rem] md:text-[2rem] text-center pb-10 text-black">
+          <div className="w-[80%] md:w-[70%] m-auto">
+            <h1 className="font-semibold mt-5 text-[2.2rem] text-center text-green-900 mb-7">
+              Foreign Employment Biometric Certificate Application
+            </h1>
+            <h1 className="font-semibold text-[1.4rem] md:text-[1.6rem] text-center pb-10 text-black">
               Select Date and Time for Biometric Capture Appointment
             </h1>
             <LocalizationProvider dateAdapter={AdapterDayjs}>
@@ -146,14 +149,10 @@ const BiometricScheduleForm = ({ params }: any) => {
             </LocalizationProvider>
           </div>
         ) : (
-          <div className="w-[80%] md:w-[60%] m-auto py-20">
-            <div className="flex justify-center">
-              <Image
-                src={NaptepLogo}
-                alt="naptep-logo"
-                className=" w-[300px]"
-              />
-            </div>
+          <div className="w-[80%] md:w-[80%] m-auto">
+            <h1 className="font-semibold mt-5 text-[2.2rem] text-center text-green-900 mb-7">
+              Foreign Employment Biometric Certificate Application
+            </h1>
             <h1 className="font-semibold text-[1.4rem] text-center pb-10 text-black">
               Biometric Capture Appointment Date Confirmed.
             </h1>

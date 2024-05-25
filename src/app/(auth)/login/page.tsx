@@ -77,8 +77,8 @@ export default function SolverForm() {
           <div className="flex justify-center">
             <Image src={NaptepLogo} alt="naptep-logo" className=" w-[400px]" />
           </div>
-          <h1 className="font-semibold mt-8 text-[1.4rem] text-center text-black">
-            Foreign Employment Biometric Application
+          <h1 className="font-semibold mt-8 text-[2.5rem] text-center text-green-900">
+            Foreign Employment Biometric Certificate Application
           </h1>
           <h1 className="font-semibold mt-8 text-xl xl:text-lg text-center pb-8 text-black">
             Login

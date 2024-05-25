@@ -114,11 +114,11 @@ export default function Signup() {
                       alt="naptep-logo"
                       className=" w-[400px]"
                     />
-                    <h1 className="font-semibold mt-8 text-[1.4rem] text-center text-black">
-                      Foreign Employment Biometric Application
+                    <h1 className="font-semibold mt-8 text-[2.3rem] text-center text-green-900">
+                      Foreign Employment Biometric Certificate Application
                     </h1>
                     <span className=" text-black text-[1.4rem] font-semibold mt-8">
-                      Signup
+                      Sign Up
                     </span>
                   </div>
                 </div>

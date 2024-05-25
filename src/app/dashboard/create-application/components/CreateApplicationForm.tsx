@@ -84,8 +84,11 @@ const CreateCertificateApplicationForm = ({ inputedValues, onSubmit }: any) => {
           <div className="flex justify-center mb-6">
             <Image src={NaptepLogo} alt="naptep-logo" className=" w-[300px]" />
           </div>
-          <h1 className="font-semibold text-[1.6rem] md:text-[1.5rem] text-center pb-10 text-black">
-            Start Application for Foreign Employment Biometric Certificate
+          <h1 className="font-semibold text-[1.6rem] md:text-[2.5rem] text-center pb-10 text-green-900">
+            Foreign Employment Biometric Certificate Application
+          </h1>
+          <h1 className="font-semibold text-[1.6rem] md:text-[2.5rem] text-center pb-10 text-black">
+            Start Application
           </h1>
           <LocalizationProvider dateAdapter={AdapterDayjs}>
             <Formik
@@ -100,7 +103,7 @@ const CreateCertificateApplicationForm = ({ inputedValues, onSubmit }: any) => {
                   <div className="input-wrap relative h-8 text-left mb-6">
                     <Field
                       as={TextField}
-                      label="ID Number"
+                      label="National Identification Number (NIN)"
                       className="border-0 border-b input-field mb-10 absolute outline-0 p-0 w-full h-full bg-white text-sm duration-75"
                       name="idNumber"
                       placeholder="Enter your NIN"
